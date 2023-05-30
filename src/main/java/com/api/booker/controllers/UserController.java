@@ -22,7 +22,7 @@ public class UserController {
     EncodeService encoder;
 
     @PostMapping("/create")
-    public ResponseApi crete(@RequestBody com.api.booker.models.in.User request){
+    public ResponseApi create(@RequestBody com.api.booker.models.in.User request){
         try{
 
             var entity = userCastService.cast(request);
