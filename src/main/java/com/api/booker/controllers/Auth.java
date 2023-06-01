@@ -35,7 +35,6 @@ public class Auth {
             var digest = MessageDigest.getInstance("SHA-256");
             byte[] hash = digest.digest(request.getPassword().getBytes(StandardCharsets.UTF_8));
             var encoded = Base64.getEncoder().encodeToString(hash);
-
             var user = uRepo.findByUsernameAndPassword(request.getUsername(), encoded);
 
             if(isNull(user)){
